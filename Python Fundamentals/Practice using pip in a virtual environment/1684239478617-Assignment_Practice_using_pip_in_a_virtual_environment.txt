@@ -1,0 +1,9 @@
+- pip list : shows the downloaded python packages in the envo only
+
+- deactivate : it will deactivate the current envo
+- pip3 list :  it shows all the downloaded packages on the python
+- call myEnvironments/py3Env/Scripts/activate : activates the envo again
+- pip freeze : it shows the packages downloaded by pip only while pip list shows all the packages on python
+- pip freeze > requirements.txt : it makes a txt file with the downloaded packages 
+- pip uninstall : uninstalles django or any other chosen package
+- pip show django : tries to show the chosen package but it failes because it's not installed 

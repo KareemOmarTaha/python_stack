@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static' , filename='style.css')}}">
+</head>
+
+<body>
+    <table>
+        {% for i in range ( 1 , input_1+1): %}
+        {% if i % 2 != 0 %}
+        <tr>
+            {% for j in range (input_2): %}
+            <td>
+                {% if (j % 2 != 0) %}
+                <div class="box1">
+                </div>
+                {% endif%}
+                {% if (j % 2 == 0) %}
+                <div class="box2">
+                </div>
+                {%endif%}
+            </td>
+            {%endfor%}
+        </tr>
+        {%endif%}
+
+        {% if i % 2 == 0 %}
+        <tr>
+            {% for j in range (input_2): %}
+            <td>
+                {% if (j % 2 == 0) %}
+                <div class="box1">
+                </div>
+                {% endif%}
+                {% if (j % 2 != 0) %}
+                <div class="box2">
+                </div>
+                {%endif%}
+            </td>
+            {%endfor%}
+        </tr>
+        {%endif%}
+        {% endfor %}
+    </table>
+</body>
+
+</html>
