@@ -1,0 +1,14 @@
+div {
+    border: 2px solid tomato;
+    margin: 0 auto;
+}
+
+.title {
+    width: fit-content;
+}
+
+.time {
+    width: 600px;
+    text-align: center;
+    margin-top: 10px;
+}
