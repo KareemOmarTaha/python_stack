@@ -1,0 +1,39 @@
+>>> Dojo.objects.create(name = "Karate" , city = "Ramallah", state= "West-Bank")
+
+>>> Dojo.objects.create(name = "KongFu" , city = "Nablus", state= "East-Bank")
+
+>>> Dojo.objects.create(name = "Jujutsu" , city = "Jerusalem", state= "North-Bank")
+
+>>> c = Dojo.objects.all()
+>>> c.delete()
+
+>>> Dojo.objects.create(name = "Karate" , city = "Ramallah", state= "West-Bank")
+
+>>> Dojo.objects.create(name = "KongFu" , city = "Nablus", state= "East-Bank")
+
+>>> Dojo.objects.create(name = "Jujutsu" , city = "Jerusalem", state= "North-Bank")
+
+>>> ninja_4 = Ninja.objects.create(first_name="Nami" , last_name="Piece" , dojo = Dojo.objects.get(id=5))
+
+>>> ninja_5 = Ninja.objects.create(first_name="Robin" , last_name="Devil" , dojo = Dojo.objects.get(id=5))
+
+>>> ninja_7 = Ninja.objects.create(first_name="Muath" , last_name="Refai" , dojo = Dojo.objects.get(id=6))
+
+>>> ninja_8 = Ninja.objects.create(first_name="Kareem" , last_name="Taha" , dojo = Dojo.objects.get(id=6))
+
+>>> Ninja.objects.filter(dojo = Dojo.objects.first())
+
+>>> Ninja.objects.filter(dojo = Dojo.objects.get(id=5))
+
+>>> Ninja.objects.filter(dojo = Dojo.objects.last())
+
+>>> lastNinja = Ninja.objects.last()
+>>> lastNinja.dojo
+
+(DjangoEnv) λ py manage.py makemigrations
+
+(DjangoEnv) λ py manage.py migrate
+
+>>> Dojo.objects.create(name = "boxing" , city="Hebron" , state="South Bank" , desc = "Gooood")
+
+
