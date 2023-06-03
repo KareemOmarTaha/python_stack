@@ -1,0 +1,23 @@
+users.objects.create(first_name="Yazan" , last_name="kayed" , email_address="Yazan@gmail.com" , age = 24)
+
+users.objects.create(first_name="Muath" , last_name="Refae" , email_address="Muath@gmail.com" , age = 27)
+
+users.objects.create(first_name="Hakeem" , last_name="Bargouthi" , email_address="Hakeem@gmail.com" , age = 27)
+
+users.objects.all().values()
+
+users.objects.last()
+
+users.objects.first()
+
+c = users.objects.get(id=3)
+c.last_name = "Pancakes"
+c.save()
+
+>>> c = users.objects.get(id=2)
+>>> c.delete()
+
+>>> users.objects.all().order_by("first_name")
+
+>>> users.objects.all().order_by("-first_name"
+

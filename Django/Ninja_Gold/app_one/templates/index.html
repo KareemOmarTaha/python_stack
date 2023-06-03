@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+</head>
+<body>
+    <h1>Your Gold : {{gold}}  </h1>
+    <a class="resetGold" href="/reset">Play Again</a>
+    <div class="gold">
+        <div><h1>Farm</h1> <h3>(earns 10-20 gold)</h3> <a href="/farm">Find Gold!</a></div>
+        <div><h1>Cave</h1> <h3>(earns 10-20 gold)</h3><a href="/cave">Find Gold!</a></div>
+        <div><h1>House</h1> <h3>(earns 10-20 gold)</h3><a href="/house">Find Gold!</a></div>
+        <div><h1>Quest</h1> <h3>(earns/takes 0-50 gold)</h3><a href="/quest">Find Gold!</a></div>
+    </div>
+</body>
+</html>
