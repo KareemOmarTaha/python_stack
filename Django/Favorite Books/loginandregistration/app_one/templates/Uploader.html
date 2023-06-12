@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-evenly;">
+        <h1>Welcome {{user_id.first_name}}</h1>
+        <a href="/logout">Logout</a>
+    </div>
+    <hr>
+    this is uploader
+    <h1>{{book_id.title}}</h1>
+    <p>Added By : {{book_id.uploaded_by.first_name}} {{book_id.uploaded_by.last_name}} </p>
+    <p>Added on : {{book_id.created_at}}</p>
+    <p>Updated on : {{book_id.updated_at}}</p>
+    <form action="/updated/{{book_id.id}}" method="POST">
+        {% csrf_token %}
+        <textarea name="book_desc" cols="30" rows="10">{{book_id.description}}</textarea>
+        <input type="submit" value="Update">
+    </form>
+    <form action="/delete/{{book_id.id}}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <h2>Users Who Liked This Book:</h2>
+    <ul>
+        {% for user in book_id.users_who_like.all %}
+        <li>{{user.first_name}} {{user.last_name}}</li>
+        {% endfor %}
+    </ul>
+    {% if user_id in book_id.users_who_like.all %}
+    <a href="/removeFav/{{book_id.id}}">Un-Favorite</a>
+    {% else %}
+    <a href="/addFav/{{book_id.id}}">Add to Favorites</a>
+    {%endif%}
+</body>
+</html>
